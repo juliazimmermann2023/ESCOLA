@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+
+</head>
+
+<body>
+    <h1>oI</h1>
+    <label for="inome">Nome:</label>
+    <input type="text" id="nome"></input>
+    <button onclick="minhaFuncao()">Clique-me</button>
+    <p id="par"></p>
+    <script>
+        var oi = document.getElementById("par")
+        function minhaFuncao() {
+            var lala = document.getElementById('nome').value
+            oi.innerHTML = 'oi ' + lala
+        }
+    </script>
+</body>
+
+</html>
