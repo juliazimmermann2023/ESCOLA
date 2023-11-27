@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-// Obtem a referencia ao documento HTML
-var board = document.getElementById('board')
-var board = document.getElementById('message')
-
-let jogadorAtual = 'x';
-let cells = Array(9).fill('');
-let gameover = false;
-
-//Cria células do tabuleiro e adciona manipuladores
-for (let i = 0; i < 9; i++){
-    let cell = document.createElement('div');
-    cell.classList('cell');
-    addEventListener('click', () => handleCellClick (i));
-    board.appendChild(cell);
-
-}
-
-//Funçâo que lida com o clique de uma célula
-function handleCellClick(index){
-
-}
-=======
 // Obtém a referência ao elemento HTML com o ID 'board' e à classe '.message'.
 const board = document.getElementById('board');
 const message = document.querySelector('.message');
@@ -50,7 +27,7 @@ function handleCellClick(index) {
         message.textContent = `Jogador ${jogadorAtual} venceu!`; // Exibe a mensagem de vitória.
     } else if (cells.every(cell => cell !== '')) { // Verifica se todas as células estão preenchidas, resultando em um empate.
         gameover = true; // O jogo termina.
-        message.textContent = 'Empate!'; // Exibe a mensagem de empate.
+        message.textContent = 'Deu véia!'; // Exibe a mensagem de empate.
     } else {
         jogadorAtual = jogadorAtual === 'X' ? 'O' : 'X'; // Alterna o jogador atual entre 'X' e 'O'.
         message.textContent = `Vez do Jogador ${jogadorAtual}`; // Exibe a mensagem de vez do jogador.
@@ -80,4 +57,3 @@ function checkWinner() {
 
     return false; // Se nenhum padrão de vitória for encontrado, retorna falso.
 }
->>>>>>> 3c73b1221c1915841f8196140de0e090590cd01c

@@ -1,24 +1,29 @@
-let numeroSecreto = Math.floor(Math.random() * 100) + 1
+let numeroSecreto = Math.floor(Math.random() * 100) + 1;
 
-let qtdTentativas = 0
+//Alterei também o tipo de variavel de const para let
+let qtdTentativas = 0;
 
-let verificarBotao = document.getElementById("vereficarBotao");
+let verificarBotao = document.getElementById("verificarBotao");
+
 let tentativaEntrada = document.getElementById("tentativa");
+
 let dica = document.getElementById("dica");
 
-verificarBotao.addEventListener("click" , function(){
+verificarBotao.addEventListener("click", function () {
 
-    cont tentativa = parseInt(tentativaEntrada.value);
+    const tentativa = parseInt(tentativaEntrada.value);
 
-    If(tentativa === numeroSecreto){
-       dica.textContent = "Parabéns! Vocẽ acertou em ${qtdtentativas}.";
-       vereficarBotao.disabled = true;
+    if (tentativa === numeroSecreto) {
+		//aqui estava sendo usado aspas simples (') e não crase (`)
+        dica.textContent = `Parabéns meu querido! Voce acertou em ${qtdTentativas} tentativas`;
+        verificarBotao.disabled = true;
     }
-    else if (tentativa < numeroSecreto){
-        dica.textContent = "Tente um numero maior";
-        gtdTentativas++;
-    }else{
-        dica.textContent = "Tente um numero menor";
-        gtdTentativas
+    else if (tentativa < numeroSecreto) {
+        dica.textContent = "Tente um número maior.";
+        qtdTentativas++;
+    } else {
+        dica.textContent = "Tente um número menor.";
+        qtdTentativas++;
+
     }
-})
+});
